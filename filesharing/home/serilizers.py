@@ -11,7 +11,7 @@ class FileListSerilizers(serializers.Serializer):
 
 	#  create zip function
 	def createzip(self , folder):
-		shutil.make_archive(str(folder) , 'zip' , 'public/static/{folder}')
+		shutil.make_archive(f'public/static/zip/{folder}' , 'zip' , f'public/static/{folder}')
 
 	def create(self , validate_data):
 		folder = Folder.objects.create()
