@@ -5,12 +5,14 @@ from rest_framework.response import Response
 
 from rest_framework import status
 
+from rest_framework.parsers import MultiPartParser, FormParser
 
-from .serializers import FileListSerilizers
+
+from home.serilizers import *
 # Create your views here.
 
 class handlefileupload(APIView):
-
+	parser_classes = [MultiPartParser]
 	def post(self, request, format=None):
 		try:
 			serializer = FileListSerilizers(data=request.data)

@@ -24,7 +24,7 @@ from django.conf.urls import include
 
 from django.conf.urls.static import static
 
-from handlefileupload.views import handlefileupload
+from home.views import *
 
 
 
@@ -33,7 +33,7 @@ from handlefileupload.views import handlefileupload
 urlpatterns = [
     path('admin/', admin.site.urls),
 	path('api-auth/', include('rest_framework.urls')),
-    path('handler/', include('handlefileupload.as_view()')),
+    path('handler/', handlefileupload.as_view()),
     # path('', include('home.urls')),
 ]
 
